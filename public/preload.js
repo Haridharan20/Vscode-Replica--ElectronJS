@@ -6,7 +6,6 @@ contextBridge.exposeInMainWorld("electron", {
       ipcRenderer.send(channel, data);
     },
     send: async (channel) => {
-      console.log(channel);
       ipcRenderer.send(channel);
     },
     on: (channel, func) =>

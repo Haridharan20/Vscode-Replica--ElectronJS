@@ -7,7 +7,7 @@ function App() {
   const [fileContent, setfileContent] = useState(null);
   return (
     <div className="App">
-      <h1 style={{ textAlign: "center" }}>Monaco Preview</h1>
+      <h1 style={{ textAlign: "center" }}>Editor Preview</h1>
       <FileDirectory />
     </div>
   );

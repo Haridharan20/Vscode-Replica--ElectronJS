@@ -3,7 +3,11 @@ import FileTree from "react-folder-tree";
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-json";
 import "prismjs/components/prism-css";
+import "prismjs/components/prism-scss";
 import "prismjs/components/prism-cshtml";
 import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard";
 import ClipboardJS from "clipboard";
@@ -23,10 +27,8 @@ function FileDirectory() {
   const codeRef = useRef(null);
 
   async function handleFileClick({ nodeData }) {
-    console.log(nodeData);
     let my_path = "";
     if (nodeData.path.length > 1) {
-      console.log(files.children, nodeData.path);
       let prevFile = null;
       for (let i = 0; i < nodeData.path.length - 1; i++) {
         prevFile =
@@ -39,7 +41,6 @@ function FileDirectory() {
     } else {
       my_path = `/${nodeData.name}`;
     }
-    console.log(my_path);
     if (nodeData.type === "file") {
       const { ipcRenderer } = window.electron;
       const reply = await ipcRenderer.invoke("my-function", {
@@ -82,7 +83,6 @@ function FileDirectory() {
   };
 
   ipcRenderer.on("selected-file", (event) => {
-    console.log("first", event);
     setDirectoryPath(event.filePath);
     setFiles({ ...files, name: event.name });
     setSelectedFile({ ...selectedFile, content: "" });
@@ -154,7 +154,6 @@ function FileDirectory() {
           <TerminalComponent />
         </div>
       </div>
-
     </div>
   );
 }

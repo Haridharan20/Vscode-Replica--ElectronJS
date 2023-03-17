@@ -59,7 +59,6 @@ function createWindow() {
   });
 
   ipcMain.on("open-file-dialog", (event) => {
-    console.log("happysss");
     dialog
       .showOpenDialog({
         properties: ["openDirectory"],
@@ -79,7 +78,7 @@ function createWindow() {
   });
 
   async function callGetFile({ fileName, fileDirectory }) {
-    console.log("fileDirectory", fileDirectory);
+    // console.log("fileDirectory", fileDirectory);
     const fs = require("fs");
     const current = path.join(fileDirectory, "");
     // const parentDir = path.dirname(current);
