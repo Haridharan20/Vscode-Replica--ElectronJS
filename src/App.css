@@ -1,38 +1,73 @@
+html,body{
+  height: 100%;
+  background-color: #115D94;
+}
+#root{
+  height: 100%;
+}
 .App {
-  text-align: center;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App>div{
+height: 80%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tree-structure{
+  background-color: #3b3c3e;
+  color:white;
+  height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+  margin-right: 10px;
+  min-width: 192px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.TreeNode{
+  margin-left: 0;
+}
+.main{
+  height:100%;
+  padding:20px
+}
+.main>div:nth-child(1)
+{
+  margin-top: 20px;
+}
+.main-editor{
+  padding: 10px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 60%;
+  justify-content: space-between;
+  align-items: start;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.editor{
+  width: 90%;
+  height:100%
+}
+.editor pre{
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+pre[class*="language-"]{
+  margin: 0 !important;
 }
+
+pre .copy-to-clipboard::before {
+  content: "Copy";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  background: #b6b1b1;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+.xterm-screen{
+  width: 100% !important;
+  height: 250px !important;
+  overflow: scroll;
+}
+
+
